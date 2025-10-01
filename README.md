@@ -126,6 +126,94 @@ gatepass-api/
 ```
 ---
 
+📂 api/v1/
+
+Contém toda a lógica da API (versão 1).
+
+controllers/ → Recebem requisições HTTP e chamam os serviços.
+
+services/ → Regras de negócio (ex.: comprar, cancelar ingressos).
+
+repositories/ → Acesso ao banco de dados (ORM/queries).
+
+middlewares/ → Executados antes dos controllers (ex.: autenticação JWT).
+
+validators/ → Validação de entrada (body, query, params).
+
+docs/ → Documentação da API (Swagger/OpenAPI).
+
+tests/ → Testes unitários e de integração.
+
+---
+
+📂 db/
+
+Gerencia o banco de dados.
+
+migrations/ → Scripts versionados de criação/alteração de tabelas.
+
+seeds/ → Scripts para popular dados iniciais (usuário admin, eventos de teste).
+
+---
+
+📂 public/css/
+
+Arquivos de estilo (caso haja frontend simples ou doc servida junto com a API).
+
+---
+
+📂 src/
+
+Código compartilhado.
+
+config/ → Configurações globais (db, cache, env).
+
+utils/ → Funções auxiliares (hash, tokens, datas).
+
+---
+
+📂 vendor/
+
+Gerenciado pelo Composer. Contém bibliotecas externas (ex.: JWT, ORM).
+
+---
+
+📄 Dockerfile
+
+Define como a aplicação será empacotada em um container Docker (PHP, dependências, servidor).
+
+---
+
+📄 README.md
+
+Documentação do projeto: introdução, como rodar e boas práticas de contribuição.
+
+---
+
+📄 composer.json
+
+Configuração do Composer (dependências, autoload, scripts).
+
+---
+
+📄 composer.lock
+
+Registra as versões exatas das dependências instaladas.
+
+---
+
+📄 docker-compose.yml
+
+Orquestra múltiplos containers (API, banco de dados, cache).
+
+---
+
+📄 setup.sh
+
+Script para configuração inicial (instalar dependências, rodar migrations, etc.).
+
+---
+
 ## Contato e Suporte
 
 Caso necessite de ajuda, tenha dúvidas ou queira contribuir com o desenvolvimento da API, sinta-se à vontade para entrar em contato com **Jonathan Bufon** através do e-mail:
