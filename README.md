@@ -5,33 +5,33 @@
 Para facilitar a colaboração no projeto e manter um fluxo de trabalho organizado, seguem algumas recomendações:
 
 - **IDE recomendada:**  
-  Utilize as ferramentas da **JetBrains** (PhpStorm ou WebStorm).  
-  > Estudantes da Unochapecó e de outras universidades conseguem uma licença **estudante vitalícia e gratuita**.  
+  Utilize as ferramentas da **JetBrains** (PhpStorm ou WebStorm).
+  > Estudantes da Unochapecó e de outras universidades conseguem uma licença **estudante vitalícia e gratuita**.
 
-- **Configuração de acesso ao repositório:**  
-  1. Crie um **token de acesso pessoal (API Token)** no GitHub para autenticação.  
-  2. Configure sua chave **SSH** local e adicione ao GitHub.  
-  3. Clone o projeto usando SSH:  
-     ```bash
-     git clone git@github.com:JonathanBufon/gatepass.git
-     ```
+- **Configuração de acesso ao repositório:**
+    1. Crie um **token de acesso pessoal (API Token)** no GitHub para autenticação.
+    2. Configure sua chave **SSH** local e adicione ao GitHub.
+    3. Clone o projeto usando SSH:
+       ```bash
+       git clone git@github.com:JonathanBufon/gatepass.git
+       ```
 
-- **Ambiente de desenvolvimento:**  
-  - Caso vá trabalhar no **frontend (React)**, utilize o **WebStorm**.  
-  - Caso vá trabalhar na **API (PHP)**, utilize o **PhpStorm**.  
+- **Ambiente de desenvolvimento:**
+    - Caso vá trabalhar no **frontend (React)**, utilize o **WebStorm**.
+    - Caso vá trabalhar na **API (PHP)**, utilize o **PhpStorm**.
 
-- **Fluxo de branchs (Git Flow simplificado):**  
-  - Sempre crie uma branch a partir da `main` para cada nova funcionalidade ou correção.  
-  - Nomeie a branch de forma clara, por exemplo:  
-    - `feature/autenticacao-jwt`  
-    - `fix/corrige-login-null`  
-  - Ao finalizar, abra um **Pull Request** para revisão antes do merge.
+- **Fluxo de branchs (Git Flow simplificado):**
+    - Sempre crie uma branch a partir da `main` para cada nova funcionalidade ou correção.
+    - Nomeie a branch de forma clara, por exemplo:
+        - `feature/autenticacao-jwt`
+        - `fix/corrige-login-null`
+    - Ao finalizar, abra um **Pull Request** para revisão antes do merge.
 
 - **Commits semânticos:**  
-  Utilize convenções de commits semânticos para manter o histórico limpo e rastreável. Exemplos:  
-  - `feat: adiciona autenticação JWT`  
-  - `fix: corrige erro ao validar ingresso`  
-  - `docs: atualiza README com estrutura do projeto`
+  Utilize convenções de commits semânticos para manter o histórico limpo e rastreável. Exemplos:
+    - `feat: adiciona autenticação JWT`
+    - `fix: corrige erro ao validar ingresso`
+    - `docs: atualiza README com estrutura do projeto`
 
 ---
 
@@ -218,5 +218,5 @@ Script para configuração inicial (instalar dependências, rodar migrations, et
 
 Caso necessite de ajuda, tenha dúvidas ou queira contribuir com o desenvolvimento da API, sinta-se à vontade para entrar em contato com **Jonathan Bufon** através do e-mail:
 
-- **E-mail:** `jonathanbufon@gmail.com`  
+- **E-mail:** `jonathanbufon@gmail.com`
 - **Assunto:** `Commit da API do GatePass`

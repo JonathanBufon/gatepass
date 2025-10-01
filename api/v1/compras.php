@@ -23,7 +23,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 switch ($metodo) {
     case 'POST':
-        // Lógica para Finalizar a Compra de Múltiplos Itens
+        // --- Lógica para Finalizar a Compra de Múltiplos Itens ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'cliente') {
             http_response_code(401);
@@ -49,7 +49,7 @@ switch ($metodo) {
         $pdo->beginTransaction();
 
         try {
-            //  Validação Final do Estoque e Reserva para CADA ITEM do carrinho
+            // --- Validação Final do Estoque e Reserva para CADA ITEM do carrinho ---
             foreach ($itensCarrinho as $item) {
                 $idProduto = $item['id_produto'];
                 $quantidade = $item['quantidade'];
@@ -84,7 +84,7 @@ switch ($metodo) {
                 }
             }
 
-            // Criação do Pedido e Itens do Pedido
+            // --- Criação do Pedido e Itens do Pedido ---
             $pedido = new Pedido(
                 $idClienteLogado,
                 $idUsuarioVendedor,
@@ -150,7 +150,7 @@ switch ($metodo) {
         break;
 
     case 'GET':
-        // Lógica para Gerar Ingresso em PDF
+        // --- Lógica para Gerar Ingresso em PDF ---
         $payload = Auth::validarToken();
         $idPedido = $_GET['id_pedido'] ?? null;
 

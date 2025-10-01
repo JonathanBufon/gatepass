@@ -30,7 +30,7 @@ switch ($metodo) {
         $acao = $dados['acao'] ?? 'login';
 
         if ($acao === 'cadastro') {
-            // Lógica de Cadastro de Cliente
+            // --- Lógica de Cadastro de Cliente ---
             $nome = $dados['nome'] ?? '';
             $email = $dados['email'] ?? '';
             $senha = $dados['senha'] ?? '';
@@ -77,7 +77,7 @@ switch ($metodo) {
                 echo json_encode(['erro' => 'Erro interno do servidor: ' . $e->getMessage()]);
             }
         } else { // $acao === 'login'
-            // Lógica de Login de Cliente
+            // --- Lógica de Login de Cliente ---
             $email = $dados['email'] ?? '';
             $senha = $dados['senha'] ?? '';
             if (empty($email) || empty($senha)) {
@@ -105,7 +105,7 @@ switch ($metodo) {
         break;
 
     case 'GET':
-        // Lógica para buscar perfil do cliente logado
+        // --- Lógica para buscar perfil do cliente logado ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'cliente') {
             http_response_code(401); // Não autorizado
@@ -132,7 +132,7 @@ switch ($metodo) {
         break;
 
     case 'PUT':
-        // Lógica de Edição de Perfil de Cliente
+        // --- Lógica de Edição de Perfil de Cliente ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'cliente') {
             http_response_code(401); // Não autorizado
@@ -206,7 +206,7 @@ switch ($metodo) {
         break;
 
     case 'DELETE':
-        // Lógica de Exclusão de Cliente
+        // --- Lógica de Exclusão de Cliente ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'cliente') {
             http_response_code(401); // Não autorizado

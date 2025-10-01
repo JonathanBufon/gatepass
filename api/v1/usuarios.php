@@ -33,7 +33,7 @@ switch ($metodo) {
         $acao = $dados['acao'] ?? 'login';
 
         if ($acao === 'cadastro') {
-            // Lógica de Cadastro
+            // --- Lógica de Cadastro ---
             $nome = $dados['nome'] ?? '';
             $email = $dados['email'] ?? '';
             $senha = $dados['senha'] ?? '';
@@ -80,7 +80,7 @@ switch ($metodo) {
                 echo json_encode(['erro' => 'Erro interno do servidor: ' . $e->getMessage()]);
             }
         } else { // $acao === 'login'
-            // Lógica de Login
+            // --- Lógica de Login ---
             $email = $dados['email'] ?? '';
             $senha = $dados['senha'] ?? '';
             
@@ -140,7 +140,7 @@ switch ($metodo) {
         break;
 
     case 'PUT':
-        //  Lógica de Edição de Perfil de Usuário
+        // --- Lógica de Edição de Perfil de Usuário ---
         $payload = Auth::validarToken();
 
         if (!$payload || $payload->tipo !== 'usuario') {
@@ -224,7 +224,7 @@ switch ($metodo) {
         break;
 
     case 'DELETE':
-        // Lógica de Exclusão de Usuário
+        // --- Lógica de Exclusão de Usuário ---
         $payload = Auth::validarToken();
 
         if (!$payload || $payload->tipo !== 'usuario') {

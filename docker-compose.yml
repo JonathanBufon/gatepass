@@ -1,7 +1,8 @@
 services:
   # Serviço Nginx (Front-end + Proxy reverso)
   nginx:
-    # Aparentemente, isso já está funcionando
+
+    # Aparentemente, isso já está funcionando, n sei
     image: docker.io/nginx:1.21-alpine
     ports:
       - "80:80"

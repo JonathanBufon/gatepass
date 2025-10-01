@@ -20,7 +20,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 switch ($metodo) {
     case 'POST':
-        // Lógica para cadastrar um novo lugar
+        // --- Lógica para cadastrar um novo lugar ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'usuario') {
             http_response_code(401);
@@ -55,7 +55,7 @@ switch ($metodo) {
         break;
 
     case 'GET':
-        // Lógica para listar todos os lugares do usuário logado
+        // --- Lógica para listar todos os lugares do usuário logado ---
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'usuario') {
             http_response_code(401);
@@ -74,7 +74,7 @@ switch ($metodo) {
         break;
 
     case 'PUT':
-        // Lógica para editar um lugar existente
+        // --- Lógica para editar um lugar existente ---
         $payload = Auth::validarToken();
         $idLugar = $_GET['id'] ?? null;
         if (!$payload || $payload->tipo !== 'usuario' || !filter_var($idLugar, FILTER_VALIDATE_INT)) {
@@ -110,7 +110,7 @@ switch ($metodo) {
         break;
 
     case 'DELETE':
-        // Lógica para excluir um lugar
+        // --- Lógica para excluir um lugar ---
         $payload = Auth::validarToken();
         $idLugar = $_GET['id'] ?? null;
         if (!$payload || $payload->tipo !== 'usuario' || !filter_var($idLugar, FILTER_VALIDATE_INT)) {
