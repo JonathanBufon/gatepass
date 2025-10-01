@@ -21,7 +21,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 switch ($metodo) {
     case 'POST':
-        // --- Lógica para cadastrar uma nova estrutura e gerar assentos (se aplicável) ---
+        //  Lógica para cadastrar uma nova estrutura e gerar assentos (se aplicável)
         $payload = Auth::validarToken();
         if (!$payload || $payload->tipo !== 'usuario') {
             http_response_code(401);
@@ -44,7 +44,7 @@ switch ($metodo) {
             exit();
         }
 
-        // --- Adicionando as verificações de tipo antes de converter ---
+        // Adicionando as verificações de tipo antes de converter
         $idProdutoPadrao = isset($dados['id_produto_padrao']) ? (int)$dados['id_produto_padrao'] : null;
         $capacidadePista = isset($dados['capacidade_pista']) ? (int)$dados['capacidade_pista'] : null;
         $prefixoAssentos = $dados['prefixo_assentos'] ?? null;
@@ -81,7 +81,7 @@ switch ($metodo) {
         break;
 
     case 'GET':
-        // --- Lógica para listar estruturas de um lugar específico ---
+        // Lógica para listar estruturas de um lugar específico
         $payload = Auth::validarToken();
         $idLugar = $_GET['id_lugar'] ?? null;
         if (!$payload || $payload->tipo !== 'usuario' || !filter_var($idLugar, FILTER_VALIDATE_INT)) {
@@ -101,13 +101,13 @@ switch ($metodo) {
         break;
 
     case 'PUT':
-        // --- Lógica para editar uma estrutura existente ---
+        // Lógica para editar uma estrutura existente
         http_response_code(501);
         echo json_encode(['erro' => 'Funcionalidade de edição de estrutura ainda não implementada.']);
         break;
 
     case 'DELETE':
-        // --- Lógica para excluir uma estrutura ---
+        // Lógica para excluir uma estrutura
         http_response_code(501);
         echo json_encode(['erro' => 'Funcionalidade de exclusão de estrutura ainda não implementada.']);
         break;

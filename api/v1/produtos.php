@@ -22,7 +22,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 switch ($metodo) {
     case 'POST':
-        // --- Lógica de Cadastro de Novo Produto ---
+        // Lógica de Cadastro de Novo Produto
         $payload = Auth::validarToken();
 
         if (!$payload || $payload->tipo !== 'usuario') {
@@ -88,7 +88,7 @@ switch ($metodo) {
         break;
 
     case 'GET':
-        // --- Lógica de Listagem de Produtos ---
+        // Lógica de Listagem de Produtos
         $payload = Auth::validarToken();
         $idUsuario = ($payload && $payload->tipo === 'usuario') ? $payload->id : null;
 
@@ -103,7 +103,7 @@ switch ($metodo) {
         break;
 
     case 'PUT':
-        // --- Lógica de Edição de Produto ---
+        // Lógica de Edição de Produto
         $payload = Auth::validarToken();
         $idProduto = $_GET['id'] ?? null;
 
@@ -144,7 +144,7 @@ switch ($metodo) {
         break;
 
     case 'DELETE':
-        // --- Lógica de Exclusão de Produto ---
+        // Lógica de Exclusão de Produto
         $payload = Auth::validarToken();
         $idProduto = $_GET['id'] ?? null;
 
