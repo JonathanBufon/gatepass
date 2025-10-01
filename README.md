@@ -126,7 +126,7 @@ gatepass-api/
 ```
 ---
 
-📂 api/v1/
+### 📂 api/v1/
 
 Contém toda a lógica da API (versão 1).
 
@@ -146,7 +146,7 @@ tests/ → Testes unitários e de integração.
 
 ---
 
-📂 db/
+### 📂 db/
 
 Gerencia o banco de dados.
 
@@ -156,13 +156,13 @@ seeds/ → Scripts para popular dados iniciais (usuário admin, eventos de teste
 
 ---
 
-📂 public/css/
+### 📂 public/css/
 
 Arquivos de estilo (caso haja frontend simples ou doc servida junto com a API).
 
 ---
 
-📂 src/
+### 📂 src/
 
 Código compartilhado.
 
@@ -172,43 +172,43 @@ utils/ → Funções auxiliares (hash, tokens, datas).
 
 ---
 
-📂 vendor/
+### 📂 vendor/
 
 Gerenciado pelo Composer. Contém bibliotecas externas (ex.: JWT, ORM).
 
 ---
 
-📄 Dockerfile
+### 📄 Dockerfile
 
 Define como a aplicação será empacotada em um container Docker (PHP, dependências, servidor).
 
 ---
 
-📄 README.md
+### 📄 README.md
 
 Documentação do projeto: introdução, como rodar e boas práticas de contribuição.
 
 ---
 
-📄 composer.json
+### 📄 composer.json
 
 Configuração do Composer (dependências, autoload, scripts).
 
 ---
 
-📄 composer.lock
+### 📄 composer.lock
 
 Registra as versões exatas das dependências instaladas.
 
 ---
 
-📄 docker-compose.yml
+### 📄 docker-compose.yml
 
 Orquestra múltiplos containers (API, banco de dados, cache).
 
 ---
 
-📄 setup.sh
+### 📄 setup.sh
 
 Script para configuração inicial (instalar dependências, rodar migrations, etc.).
 
