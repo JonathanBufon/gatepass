@@ -1,5 +1,5 @@
 <?php
-// backend/api/v1/estruturas.php - CORRIGIDO: ArgumentCountError
+// backend/api/v1/EstruturaController.php - CORRIGIDO: ArgumentCountError
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');

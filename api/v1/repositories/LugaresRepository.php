@@ -1,0 +1,2 @@
+<?php
+//acesso a banco

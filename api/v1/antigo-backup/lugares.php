@@ -1,5 +1,5 @@
 <?php
-// backend/api/v1/lugares.php - Endpoint de API para Gerenciamento de Lugares
+// backend/api/v1/LugaresController.php - Endpoint de API para Gerenciamento de Lugares
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *'); // Apenas para desenvolvimento

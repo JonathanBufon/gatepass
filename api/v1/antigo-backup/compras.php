@@ -1,5 +1,5 @@
 <?php
-// backend/api/v1/compras.php - Endpoint de API para o Módulo de Compras
+// backend/api/v1/CompraController.php - Endpoint de API para o Módulo de Compras
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
