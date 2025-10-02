@@ -100,118 +100,50 @@ Para garantir que a API seja segura, escalável e fácil de manter, ainda é nec
 - **Cenário final Ideal:**
 
 ```
-gatepass-api/
-├── api/v1
-│   ├── controllers
-│   ├── services
-│   ├── repositories
-│   ├── middlewares
-│   ├── validators
-│   ├── docs
-│   └── tests
-├── db
-│   ├── migrations
-│   └── seeds
-├── public/css
-├── src
-│   ├── config
-│   └── utils
-├── vendor
-├── Dockerfile
-├── README.md
-├── composer.json
-├── composer.lock
-├── docker-compose.yml
-└── setup.sh
+gatepass/
+├── api/
+│   └── v1/
+│       ├── controllers/    # NOVO: Camada de Apresentação: Lida com Requests e Responses HTTP.
+│       │   └── UsuarioController.php
+│       ├── repositories/   # NOVO: Camada de Acesso a Dados: A única que "fala" com o banco.
+│       │   └── UsuarioRepository.php
+│       └── services/       # NOVO: Camada de Serviço: Contém toda a lógica de negócio.
+│           └── UsuarioService.php
+│
+├── config/                 # NOVO: Centraliza as configurações da aplicação.
+│   ├── routes.php          # Define todas as rotas da API para o componente symfony/routing.
+│   └── services.php        # "Ensina" o Container a criar todos os serviços (Injeção de Dependência).
+│
+├── db/                     # Mantido para ativos do projeto, não para o código da aplicação.
+│   └── schema.sql          # O script para criar a estrutura do banco de dados.
+│
+├── middlewares/            # NOVO: Para a lógica que roda antes dos controllers (agora como Event Listeners).
+│   └── AuthMiddleware.php  # Exemplo: Verificação de token de autenticação.
+│   └── CorsMiddleware.php  # NOVO: Adiciona cabeçalhos CORS para permitir acesso do frontend.
+│
+├── public/                 # A única pasta publicamente acessível (Document Root).
+│   └── index.php           # Ponto de Entrada Único (Front Controller) para todas as requisições.
+│
+├── src/                    # Código fonte principal, o "Core" da sua aplicação.
+│   └── Core/
+│       ├── Kernel.php      # NOVO: O "coração" da aplicação. Inicializa tudo.
+│       └── AuthService.php   # REFATORADO: Serviço para gerar e validar tokens JWT.
+│   ├── Models/             # Classes que representam as entidades do banco (ex: Usuario.php).
+│   └── Utils/              # Classes utilitárias reutilizáveis (ex: FileUpload.php).
+│
+├── tests/                  # NOVO: Pasta para os testes automatizados da sua API.
+│
+├── validators/             # NOVO: Para as classes de validação de dados de entrada.
+│   └── ClienteValidator.php
+│
+├── vendor/                 # Pasta gerenciada pelo Composer, contém as dependências (Symfony, etc.).
+│
+├── .env                    # EM BREVE: Arquivo para variáveis de ambiente locais (NÃO vai para o Git).
+├── .env.example            # EM BREVE: Um exemplo de como o arquivo .env deve ser.
+├── composer.json           # ATUALIZADO: Define as dependências e o autoloading do projeto.
+├── composer.lock           # Trava as versões exatas das dependências.
+└── README.md               # ATUALIZADO: Documentação geral do projeto.
 ```
----
-
-### 📂 api/v1/
-
-Contém toda a lógica da API (versão 1).
-
-controllers/ → Recebem requisições HTTP e chamam os serviços.
-
-services/ → Regras de negócio (ex.: comprar, cancelar ingressos).
-
-repositories/ → Acesso ao banco de dados (ORM/queries).
-
-middlewares/ → Executados antes dos controllers (ex.: autenticação JWT).
-
-validators/ → Validação de entrada (body, query, params).
-
-docs/ → Documentação da API (Swagger/OpenAPI).
-
-tests/ → Testes unitários e de integração.
-
----
-
-### 📂 db/
-
-Gerencia o banco de dados.
-
-migrations/ → Scripts versionados de criação/alteração de tabelas.
-
-seeds/ → Scripts para popular dados iniciais (usuário admin, eventos de teste).
-
----
-
-### 📂 public/css/
-
-Arquivos de estilo (caso haja frontend simples ou doc servida junto com a API).
-
----
-
-### 📂 src/
-
-Código compartilhado.
-
-config/ → Configurações globais (db, cache, env).
-
-utils/ → Funções auxiliares (hash, tokens, datas).
-
----
-
-### 📂 vendor/
-
-Gerenciado pelo Composer. Contém bibliotecas externas (ex.: JWT, ORM).
-
----
-
-### 📄 Dockerfile
-
-Define como a aplicação será empacotada em um container Docker (PHP, dependências, servidor).
-
----
-
-### 📄 README.md
-
-Documentação do projeto: introdução, como rodar e boas práticas de contribuição.
-
----
-
-### 📄 composer.json
-
-Configuração do Composer (dependências, autoload, scripts).
-
----
-
-### 📄 composer.lock
-
-Registra as versões exatas das dependências instaladas.
-
----
-
-### 📄 docker-compose.yml
-
-Orquestra múltiplos containers (API, banco de dados, cache).
-
----
-
-### 📄 setup.sh
-
-Script para configuração inicial (instalar dependências, rodar migrations, etc.).
-
 ---
 
 ## Contato e Suporte
