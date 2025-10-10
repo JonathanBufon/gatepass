@@ -1,0 +1,11 @@
+# Dependências do Composer
+/vendor/
+
+# Arquivo de variáveis de ambiente locais (contém segredos)
+/.env
+
+# Arquivos de log
+*.log
+
+# Pastas de IDEs (opcional, mas recomendado)
+/.idea/

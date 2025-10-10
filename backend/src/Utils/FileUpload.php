@@ -64,7 +64,7 @@ class FileUpload
         }
 
         // Gera um nome de arquivo único para evitar colisões
-        $nomeArquivoGerado = uniqid() . '.' . $extensao;
+        $nomeArquivoGerado = uniqid() . 'Utils' . $extensao;
         $caminhoCompletoDestino = $diretorioDestino . '/' . $nomeArquivoGerado;
 
         if (!move_uploaded_file($fileData['tmp_name'], $caminhoCompletoDestino)) {
